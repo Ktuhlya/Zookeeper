@@ -119,7 +119,7 @@ val animals = arrayOf(camel, lion, deer, goose, bat, rabbit)
 
 fun main() {
     print("Please enter the number of the habitat you would like to view: > ")
-   var str = readln()
+   val str = readln()
    if (str == "exit") {
        print("See you later!")
        System.exit(0)
