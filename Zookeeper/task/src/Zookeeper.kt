@@ -1,3 +1,5 @@
+import java.lang.Exception
+
 const val camel = """Switching on the camera in the camel habitat...
  ___.-''''-.
 /___  @    |
@@ -113,12 +115,25 @@ const val rabbit = """Switching on the camera in the rabbit habitat...
 (" ~----( ~   Y.  )
 It looks like we will soon have more rabbits!"""
 
+val animals = arrayOf(camel, lion, deer, goose, bat, rabbit)
+
 fun main() {
-print("Please enter the number of the habitat you would like to view: > ")
-    val  list = mutableListOf<String>(camel, lion, deer, goose, bat, rabbit)
-    val index = readLine()!!.toInt()
-    println(list[index])
-    println("---")
-    println("You've reached the end of the program. To check another habitat, " +
-            "please restart the watcher.")
+    print("Please enter the number of the habitat you would like to view: > ")
+   var str = readln()
+   if (str == "exit") {
+       print("See you later!")
+       System.exit(0)
+   } else{
+       try {
+           println(animals[str.toInt()])
+           main()
+       } catch (e : Exception){
+           println("There are no habitat with your number. Try some else... ")
+           main()
+       }
+   }
+
+
+
+
 }
