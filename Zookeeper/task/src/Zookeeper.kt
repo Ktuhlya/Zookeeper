@@ -114,5 +114,11 @@ const val rabbit = """Switching on the camera in the rabbit habitat...
 It looks like we will soon have more rabbits!"""
 
 fun main() {
-
+print("Please enter the number of the habitat you would like to view: > ")
+    val  list = mutableListOf<String>(camel, lion, deer, goose, bat, rabbit)
+    val index = readLine()!!.toInt()
+    println(list[index])
+    println("---")
+    println("You've reached the end of the program. To check another habitat, " +
+            "please restart the watcher.")
 }
